@@ -2,7 +2,9 @@ package Sorting;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 
 
@@ -66,7 +68,6 @@ public class Driver {
 			//System.out.println(file1.get(f));
 		}
 		
-		
 		String[] newerFile1 = file1.toArray(new String[file1.size()]);
 		for(int b = 0; b < newerFile1.length; b++) {
 			newerFile1[b] = newerFile1[b].trim();
@@ -75,10 +76,17 @@ public class Driver {
 		
 		
 		for(int a = 0; a < newerFile1.length; a++) {
-			
+			int count = 0;
+			int c = 0;
+			if(newerFile1[a] == newerFile1[c])
 			
 			System.out.println(newerFile1[a]);
 		}
+		
+		Arrays.stream(newerFile1)
+	      .collect(Collectors.groupingBy(s -> s))
+	      .forEach((k, v) -> System.out.println(k+" "+v.size()));
+		
 		
 			
 		
